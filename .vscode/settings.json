@@ -4,6 +4,7 @@
         "component",
         "digitallib",
         "node",
+        "sendfile",
         "unmount"
     ]
 }
