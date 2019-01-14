@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use(routes);
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/digitallib');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks');
 
 // Starting the server
 app.listen(PORT, () => {
