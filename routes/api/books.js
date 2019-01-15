@@ -10,7 +10,7 @@ router
 // /api/books/:id
 router
     .route('/:id')
-    .get(booksController.findById)
+    .get(booksController.findByID)
     .post(booksController.update)
     .delete(booksController.remove);
 
