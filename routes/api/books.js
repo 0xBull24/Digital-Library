@@ -10,8 +10,8 @@ router
 // /api/books/:id
 router
     .route('/:id')
-    .get(booksController.findByID)
-    .post(booksController.update)
+    // .get(booksController.findByID)
+    // .post(booksController.update)
     .delete(booksController.remove);
 
 module.exports = router;
