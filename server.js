@@ -25,5 +25,5 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks');
 // Starting the server
 app.listen(PORT, () => {
     console.log(`Server started on port`);
-    console.log(`Connect here http://localhost/${PORT}`);
+    console.log(`Connect here http://localhost:${PORT}`);
 });
