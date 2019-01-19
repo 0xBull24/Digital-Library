@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar'
 import './App.css';
 
 class App extends Component {
@@ -9,6 +10,9 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.setState( {
+      isLoaded: true
+    });
   }
 
   render () {
@@ -20,9 +24,7 @@ class App extends Component {
       console.log(`App loaded`);
     }
     return (
-      <Router>
-
-      </Router>
+      <Navbar />
     )
   }
 }
