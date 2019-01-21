@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar'
+import Jumbotron from './components/Jumbotron'
+import Search from './pages/Search'
 import './App.css';
+import jumbotron from './components/Jumbotron';
 
 class App extends Component {
 
@@ -22,10 +25,19 @@ class App extends Component {
       )
     } else {
       console.log(`App loaded`);
+      return (
+        <div>
+        <Navbar />
+        <Jumbotron />
+        <Router>
+          <Switch>
+            <Route exact path='/' component={ Search } />
+            <Route exact path='/search' component={ Search } />
+          </Switch>
+        </Router>
+        </div>
+      )
     }
-    return (
-      <Navbar />
-    )
   }
 }
 
