@@ -4,7 +4,6 @@ import Navbar from './components/Navbar'
 import Jumbotron from './components/Jumbotron'
 import Search from './pages/Search'
 import './App.css';
-import jumbotron from './components/Jumbotron';
 
 class App extends Component {
 

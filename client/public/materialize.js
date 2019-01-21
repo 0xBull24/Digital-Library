@@ -1,1 +1,1 @@
-M.autoinit();
+M.AutoInit();
