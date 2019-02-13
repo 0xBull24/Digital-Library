@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Search from '../../components/Search'
 import './search'
+import Card from '../../components/cards'
+
+import API from '../../utils/api';
 
 class SearchPage extends Component {
     
@@ -8,6 +10,18 @@ class SearchPage extends Component {
         query: '',
         books: [],
     };
+
+    componentDidMount() {
+        API.getBooks('harry potter')
+        .then(res => {
+            res.data.items.forEach(element => {
+                console.log('Google book info', element);
+            });;
+        })
+        .catch(err => console.log('err', err)
+        );
+    }
+
 
     handleSearch = event => {
         console.log('this is the target', event.target);
@@ -42,7 +56,7 @@ class SearchPage extends Component {
                         </div>
                         <div className='input-field'>
                             <button 
-                                className='waves-effect waves-light btn right'
+                                className='waves-effect waves-light btn right amber'
                                 onClick={ this.handleSubmit }>
                                 Look for books
                             </button>
