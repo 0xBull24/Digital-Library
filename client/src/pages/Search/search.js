@@ -28,12 +28,18 @@ class SearchPage extends Component {
 
     render() {
         return (
-            <div className='container'>
-                <Search
-                value={ this.state.query }
-                handleSearch={ this.handleSearch } 
-                handleSubmit= { this.handleSubmit }
-                />
+            <div className='container-fluid center-align'>
+                <h4>Book Search</h4>
+                <div className="row center-align">
+                    <div className="col s12 center-align">
+                        <div className='input-field col s6 push-s3'>
+                            <input placeholder='Book Title' id='book-title' type='text' className='validate'></input>
+                        </div>
+                        <div className='input-field'>
+                            <button className='waves-effect waves-light btn right'>Search</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
