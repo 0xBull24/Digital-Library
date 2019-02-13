@@ -20,23 +20,32 @@ class SearchPage extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log();
+        console.log('state', this.state);
         console.log('Clicking this button');
-
-
     }
 
     render() {
         return (
-            <div className='container-fluid center-align'>
+            <div className='container center-align'>
                 <h4>Book Search</h4>
                 <div className="row center-align">
                     <div className="col s12 center-align">
                         <div className='input-field col s6 push-s3'>
-                            <input placeholder='Book Title' id='book-title' type='text' className='validate'></input>
+                            <input 
+                                placeholder='Book Title' 
+                                name='query' 
+                                type='text' 
+                                className='validate'
+                                value={ this.state.query }
+                                onChange= { this.handleSearch }>
+                            </input>
                         </div>
                         <div className='input-field'>
-                            <button className='waves-effect waves-light btn right'>Search</button>
+                            <button 
+                                className='waves-effect waves-light btn right'
+                                onClick={ this.handleSubmit }>
+                                Look for books
+                            </button>
                         </div>
                     </div>
                 </div>
