@@ -26,14 +26,14 @@ class App extends Component {
       console.log(`App loaded`);
       return (
         <div>
-        <Navbar />
-        <Jumbotron />
-        <Router>
-          <Switch>
-            <Route exact path='/' component={ Search } />
-            <Route exact path='/search' component={ Search } />
-          </Switch>
-        </Router>
+          <Navbar />
+          <Jumbotron />
+          <Router>
+            <Switch>
+              <Route exact path='/' component={ Search } />
+              <Route exact path='/search' component={ Search } />
+            </Switch>
+          </Router>
         </div>
       )
     }
