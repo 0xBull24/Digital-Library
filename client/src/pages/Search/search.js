@@ -12,6 +12,7 @@ class SearchPage extends Component {
         books: [],
     };
 
+    // Grabbing random 'Harry Potter Books'
     componentDidMount() {
         API.getBooks('harry potter')
         .then(res => {
@@ -22,10 +23,31 @@ class SearchPage extends Component {
         );
     }
 
+    // As a user types, grab the input in the search bar
+    handleSearch = event => {
+        console.log('this is the target', event.target);
+        const { target: { name, value } } = event;
+        this.setState({
+            [name]: value,
+        });
+        console.log(this.state);
+    }
+
+    // Search for the users input
+    handleSubmit = event => {
+        event.preventDefault();
+        console.log('state', this.state);
+        console.log('Clicking this button');
+    }
+
     render() {
         return (
             <div>
-                <Search />
+                <Search
+                  name={ this.state.query }
+                  handleSearch={ this.handleSearch }
+                  handleSubmit={ this.handleSubmit }
+                />
                 <div className="row center-align">
                     {
                         this.state.books.map((book, index) => (
@@ -33,7 +55,6 @@ class SearchPage extends Component {
                                 key={ index }
                                 title={ book.volumeInfo.title}
                                 image={ book.volumeInfo.imageLinks.smallThumbnail }
-                                description={ book.searchInfo.textSnippet }
                                 info={ book.volumeInfo.infoLink}
                             />
                         ))
