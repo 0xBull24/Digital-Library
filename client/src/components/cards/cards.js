@@ -3,7 +3,7 @@ import './card.css'
 
 const Card = props => {
     return(
-            <div className="col s12 m6 push-m2">
+            <div className="col s3">
                 <div className="card z-depth-2">
                     <div className="card-image">
                         <img src={props.image} alt="book cover"></img>
