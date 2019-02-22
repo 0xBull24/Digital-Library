@@ -40,6 +40,27 @@ class SearchPage extends Component {
         console.log('Clicking this button');
     }
 
+    // Saving the book to the db
+    saveBook = event => {
+        const book = this.state.books[event.target.id].volumeInfo;
+        const savedBook = {
+            title: book.title,
+            authors: book.authors,
+            description: book.description,
+            image: book.imageLinks.smallThumbnail,
+            link: book.infoLink,
+        };
+
+        // Call api to save book
+        API.saveBook(savedBook)
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err => {
+            console.log('Error', err);
+        });
+    }
+
     render() {
         return (
             <div>
@@ -53,9 +74,11 @@ class SearchPage extends Component {
                         this.state.books.map((book, index) => (
                             <Card 
                                 key={ index }
+                                id={ index }
                                 title={ book.volumeInfo.title}
                                 image={ book.volumeInfo.imageLinks.smallThumbnail }
                                 info={ book.volumeInfo.infoLink}
+                                save={ this.saveBook }
                             />
                         ))
                     }

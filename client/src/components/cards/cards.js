@@ -4,7 +4,7 @@ import './card.css'
 const Card = props => {
     return(
             <div className="col s12 m6 push-m2">
-                <div className="card">
+                <div className="card z-depth-2">
                     <div className="card-image">
                         <img src={props.image} alt="book cover"></img>
                     </div>
@@ -12,8 +12,8 @@ const Card = props => {
                         <p><strong>{props.title}</strong></p>
                     </div>
                     <div className="card-action">
-                        <a href={props.save}>Save</a>
-                        <a href={props.info} target="_blank" rel="noopener noreferrer">View More</a>
+                        <button id={props.id} className="waves-effect btn amber" onClick={props.save}>Save</button>
+                        <button className="waves-effect btn amber" href={props.info} target="_blank" rel="noopener noreferrer">View More</button>
                     </div>
                 </div>
             </div>

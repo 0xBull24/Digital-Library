@@ -7,6 +7,6 @@ img {
     height: 40vh;
 }
 
-.card-action > a {
-    margin: 40px;
+.card-action > button {
+    margin: 10px;
 }

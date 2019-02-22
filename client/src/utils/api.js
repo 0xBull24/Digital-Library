@@ -14,7 +14,7 @@ export default {
 
     // Save books to library
     saveBook: (book) => {
-        return axios.post('api/books', book);
+        return axios.post('/api/books', book);
     },
 
     // Delete / Remove books from library
