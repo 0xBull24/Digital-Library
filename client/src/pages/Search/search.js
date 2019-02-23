@@ -37,7 +37,16 @@ class SearchPage extends Component {
     handleSubmit = event => {
         event.preventDefault();
         console.log('state', this.state);
-        console.log('Clicking this button');
+        API.getBooks(this.state.query)
+        .then(res => {
+            this.setState({ 
+                query: '',
+                books: res.data.items
+            });
+        })
+        .catch(err => {
+            console.log('err', err);
+        });
     }
 
     // Saving the book to the db
