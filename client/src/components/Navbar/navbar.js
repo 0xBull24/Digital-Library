@@ -3,7 +3,7 @@ import './navbar.css'
 
 function Navbar() {
     return (
-        <nav className='amber'>
+        <nav className='green'>
             <div className="nav-wrapper">
                 <ul id="nav-mobile" className="left hide-on-med-and-down">
                     <li>

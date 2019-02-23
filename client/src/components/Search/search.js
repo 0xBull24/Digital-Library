@@ -16,7 +16,7 @@ const Search = props => {
                     onChange={ props.handleSearch }>
                 </input>
                 <button 
-                    className='waves-effect waves-light btn amber'
+                    className='waves-effect waves-light btn green'
                     onClick={ props.handleSubmit } >
                     Search
                 </button>
