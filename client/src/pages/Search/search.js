@@ -14,7 +14,7 @@ class SearchPage extends Component {
 
     // Grabbing random 'Harry Potter Books'
     componentDidMount() {
-        API.getBooks('harry potter')
+        API.getBooks('AWS')
         .then(res => {
             this.setState({ books: res.data.items});
             console.log('Books', this.state.books);

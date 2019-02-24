@@ -5,7 +5,6 @@ const Search = props => {
 
     return(
         <div className="row center-align">
-            <h4>Book Search</h4>
             <div className='input-field col s6 push-s3'>
                 <input
                     name='query'

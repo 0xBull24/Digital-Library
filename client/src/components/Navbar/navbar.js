@@ -16,6 +16,11 @@ function Navbar() {
                         <a href='/saved'> Saved</a>
                     </li>
                 </ul>
+                <ul id="nav-mobile" className="right hide-on-med-and-down">
+                    <li>
+                        <a href='https://github.com/DBiles/Digital-Library' target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
+                    </li>
+                </ul>
             </div>
         </nav>
     )

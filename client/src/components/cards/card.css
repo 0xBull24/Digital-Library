@@ -4,9 +4,13 @@
 
 img {
     width: 15vw;
-    height: 40vh;
+    height: 50vh;
 }
 
-.card-action > button {
+.card-action > a {
     margin: 10px;
+}
+
+.card-content > p {
+    font-size: 15px;
 }

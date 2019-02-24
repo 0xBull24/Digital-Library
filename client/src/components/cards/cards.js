@@ -12,8 +12,8 @@ const Card = props => {
                         <p><strong>{props.title}</strong></p>
                     </div>
                     <div className="card-action">
-                        <button id={props.id} className="waves-effect btn green" onClick={props.save}>Save</button>
-                        <button className="waves-effect btn green" href={props.info} target="_blank" rel="noopener noreferrer">View More</button>
+                        <a id={props.id} className="waves-effect btn green" onClick={props.save}>Save</a>
+                        <a className="waves-effect btn green" href={props.info} target="_blank" rel="noopener noreferrer">View More</a>
                     </div>
                 </div>
             </div>
