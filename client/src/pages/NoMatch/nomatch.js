@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './nomatch.css'
 
 const NoMatch = props => {
@@ -7,8 +7,7 @@ const NoMatch = props => {
             <h1>Sorry, No route found. Please check url</h1>
             <h2>&gt;_&lt;</h2>
         </div>
-    )
-     
+    )    
 }
 
 export default NoMatch;

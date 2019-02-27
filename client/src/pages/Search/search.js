@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './search'
-import Search from '../../components/Search'
-import Card from '../../components/cards'
+import Search from '../../components/Search';
+import Card from '../../components/cards';
 
 import API from '../../utils/api';
 
