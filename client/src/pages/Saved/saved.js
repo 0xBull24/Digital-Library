@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './saved.css';
 import API from '../../utils/api';
+import HCard from '../../components/Hcards';
 
 class Saved extends Component {
 
@@ -12,8 +13,8 @@ class Saved extends Component {
     componentDidMount() {
         API.getSavedBooks()
         .then(res => {
-            console.log(res.data)
-            this.setState({ books: res.data })
+            this.setState({ books: res.data });
+            console.log(this.state);
         })
         .catch(err => {
             console.log('Database retrieve Error', err);
@@ -22,8 +23,19 @@ class Saved extends Component {
 
     render() {
         return (
-            <div className="center-align">
-                <h1>Books returned here</h1>
+            <div className="container card-container center-align">
+            {
+                this.state.books.map((book, index) => (
+                    <HCard
+                        key={ index }
+                        id={ index }
+                        title={ book.title }
+                        authors={ book.authors}
+                        link={ book.link }
+                        image= { book.image }
+                    />
+                ))
+            }
             </div>
         )
     }
