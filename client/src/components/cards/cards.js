@@ -6,7 +6,7 @@ const Card = props => {
             <div className="col s3">
                 <div className="card hoverable z-depth-3">
                     <div className="card-image">
-                        <img src={props.image} alt="book cover"></img>
+                        <img className="card-images" src={props.image} alt="book cover"></img>
                     </div>
                     <div className="card-content">
                         <p><strong>{props.title}</strong></p>
