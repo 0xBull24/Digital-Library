@@ -19,6 +19,6 @@ export default {
 
     // Delete / Remove books from library
     deleteBook: (id) => {
-        return axios.delete('/api/books/:id', id);
+        return axios.delete('/api/books/' + id);
     }
 }

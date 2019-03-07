@@ -23,10 +23,10 @@ class Saved extends Component {
 
     // Remove a book from the library
     deleteBook = event => {
-        let bookId = this.state.books[event.target.id]._id;
-        API.deleteBook(bookId)
+        let book = this.state.books[event.target.id]._id;
+        API.deleteBook(book)
         .then( () => {
-            API.getBooks()
+            API.getSavedBooks()
             .then(res => {
                 this.setState({ books: res.data});
             })
