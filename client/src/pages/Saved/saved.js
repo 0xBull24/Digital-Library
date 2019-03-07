@@ -21,21 +21,43 @@ class Saved extends Component {
         });
     }
 
+    // Remove a book from the library
+    deleteBook = event => {
+        let bookId = this.state.books[event.target.id]._id;
+        API.deleteBook(bookId)
+        .then( () => {
+            API.getBooks()
+            .then(res => {
+                this.setState({ books: res.data});
+            })
+            .catch(err => {
+                console.log('Pulling Book Error - ', err);
+            })
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
     render() {
         return (
             <div className="container card-container center-align">
-            {
-                this.state.books.map((book, index) => (
-                    <HCard
-                        key={ index }
-                        id={ index }
-                        title={ book.title }
-                        authors={ book.authors}
-                        link={ book.link }
-                        image= { book.image }
-                    />
-                ))
-            }
+                <div className="row">
+                    {
+                        this.state.books.map((book, index) => (
+                            <HCard
+                                key={ index }
+                                id={ index }
+                                title={ book.title }
+                                authors={ book.authors }
+                                description={ book.description }
+                                link={ book.link }
+                                image={ book.image }
+                                delete={ this.deleteBook }
+                            />
+                        ))
+                    }
+                </div>
             </div>
         )
     }

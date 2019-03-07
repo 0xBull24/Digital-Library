@@ -1,4 +1,8 @@
 .horizontal {
-    width: 35vw;
+    width: 30vw;
     height: 15vw;
+}
+
+.hcard-images {
+    height: 200px;
 }

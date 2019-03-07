@@ -11,12 +11,12 @@ const HCard = props => {
             <div className="card-stacked">
                 <div className="card-content">
                 <h5>{props.title}</h5>
+                <p><strong>Authors:</strong> {props.authors}</p>
                 <br/>
                 <p>{props.description}</p>
-                <p><strong>Authors:</strong> {props.authors}</p>
                 </div>
                 <div className="card-action">
-                <button className="waves-effect btn green">Button</button>
+                <button id={props.id} className="waves-effect btn green" onClick={props.delete}>Delete</button>
                 <a className="waves-effect btn green" href={props.link} target="_blank" rel="noopener noreferrer">More Info</a>
                 </div>
             </div>

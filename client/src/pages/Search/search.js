@@ -55,7 +55,7 @@ class SearchPage extends Component {
         const savedBook = {
             title: book.title,
             authors: book.authors,
-            description: book.description,
+            description: this.state.books[event.target.id].searchInfo.textSnippet,
             image: book.imageLinks.smallThumbnail,
             link: book.infoLink,
         };
