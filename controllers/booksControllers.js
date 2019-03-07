@@ -9,13 +9,6 @@ module.exports = {
            .then(response =>  res.json(response))
            .catch(err => { res.status(400).json(err)});
     },
-    // Find a specific book
-    findByID: function(req, res) {
-        db.Book
-          .findByID(req.params.id)
-          .then(response => res.json(response))
-          .catch(err => res.status(400).json(err));
-    },
     // Create a book for the library
     create: function(req, res) {
         db.Book
@@ -23,17 +16,10 @@ module.exports = {
           .then(response => res.status(201).json(response))
           .catch(err => {res.status(400).json(err)});
     },
-    //  Update a given book list
-    update: function(req, res) {
-        db.Book
-          .findOneAndUpdate({_id: req.params.id}, req.body)
-          .then(response =>  res.status(200).json(response))        
-          .catch(err => res.status(400).json(err));
-    },
     // Remove a book from the list
     remove: function(req, res) {
         db.Book
-          .findByID({ _id: req.params.id })
+          .findById({ _id: req.params.id })
           .then(response => response.remove())
           .then(response => res.status(200).json(response))
           .catch(err => res.status(400).json(err));
