@@ -3,7 +3,7 @@ import './hcard.css'
 
 const HCard = props => {
     return(
-        <div className="col s6">
+        <div className="col s8 push-s2">
             <div className="card horizontal ch hoverable z-depth-3">
             <div className="card-image">
                 <img className="hcard-images" src={props.image} alt="saved book cover" />
