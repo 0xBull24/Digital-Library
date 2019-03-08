@@ -27,18 +27,18 @@ class App extends Component {
     } else {
       console.log(`App loaded`);
       return (
-        <div>
+        <Router>
+          <div>
           <Navbar />
           <Jumbotron />
-          <Router>
             <Switch>
               <Route exact path='/' component={ Search } />
               <Route exact path='/search' component={ Search } />
               <Route exact path='/saved' component={ Saved } />
               <Route component={ NoMatch } />
             </Switch>
-          </Router>
-        </div>
+          </div>
+        </Router>
       )
     }
   }

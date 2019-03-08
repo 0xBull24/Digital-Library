@@ -1,1 +1,0 @@
-hosts_list = ['n.Ashburn.CLSTMGMT', 's.VAAVMREPBRK07', ]
